@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 namespace MiniKeyboard
 {
    
-    public partial class Form1 : Form
+    public partial class Frm_ : Form
     {
-        public Form1()
+        public Frm_()
         {
             InitializeComponent();
         }

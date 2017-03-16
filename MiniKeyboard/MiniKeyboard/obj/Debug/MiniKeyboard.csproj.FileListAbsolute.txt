@@ -18,3 +18,9 @@ E:\Sheffiled Hallam 2017 Semester 2\C# REPOSITRY CODES\Assignment2_Keyboard-mast
 E:\Sheffiled Hallam 2017 Semester 2\C# REPOSITRY CODES\Assignment2_Keyboard-master\Assignment2_Keyboard-master\MiniKeyboard\MiniKeyboard\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.csproj.GenerateResource.Cache
 E:\Sheffiled Hallam 2017 Semester 2\Assignment2C#\Assignment2_Keyboard-master\Assignment2_Keyboard-master\MiniKeyboard\MiniKeyboard\MiniKeyboard\MiniKeyboard\bin\Debug\MiniKeyboard.exe.config
 E:\Sheffiled Hallam 2017 Semester 2\Assignment2C#\Assignment2_Keyboard-master\Assignment2_Keyboard-master\MiniKeyboard\MiniKeyboard\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.exe
+E:\Sheffiled Hallam 2017 Semester 2\Programming\Assignment2-MiniKeyboard\ProgrammingAssignment\MiniKeyboard\MiniKeyboard\bin\Debug\MiniKeyboard.exe.config
+E:\Sheffiled Hallam 2017 Semester 2\Programming\Assignment2-MiniKeyboard\ProgrammingAssignment\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.exe
+E:\Sheffiled Hallam 2017 Semester 2\Programming\Assignment2-MiniKeyboard\ProgrammingAssignment\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.csprojResolveAssemblyReference.cache
+E:\Sheffiled Hallam 2017 Semester 2\Programming\Assignment2-MiniKeyboard\ProgrammingAssignment\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.Form1.resources
+E:\Sheffiled Hallam 2017 Semester 2\Programming\Assignment2-MiniKeyboard\ProgrammingAssignment\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.Properties.Resources.resources
+E:\Sheffiled Hallam 2017 Semester 2\Programming\Assignment2-MiniKeyboard\ProgrammingAssignment\MiniKeyboard\MiniKeyboard\obj\Debug\MiniKeyboard.csproj.GenerateResource.Cache
