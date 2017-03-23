@@ -45,7 +45,7 @@ namespace MiniKeyboard
         private void Form1_Load(object sender, EventArgs e)
         {
             withinTimer.Interval = intIntervalRequired;
-
+           
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
                 BoolIsButtonPressed[intWhichButton] = false;
 
@@ -82,7 +82,7 @@ namespace MiniKeyboard
           //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
             if (boolFirstVisit == true)
             {
-                BoolIsButtonPressed(1) = true;
+                BoolIsButtonPressed[1] = true;
 
                 lstGlobalListbox.Items.Clear();
                 Str_KeyStrokes = "1";
@@ -90,12 +90,13 @@ namespace MiniKeyboard
                 txt_KeySequence.AppendText(Str_KeyStrokes);
                 for (int Index = 0; Index <= List_1.Items.Count - 1; Index++)
                 {
-                    lstGlobalListbox.Items.Add(List_1.Items(Index));
+                    
+                    lstGlobalListbox.Items.Add(List_1.Items[Index].ToString());
                     //If not first click then enable timer and proceed.
                     boolFirstVisit = false;
                     withinTimer.Enabled = true;
                     Number = Number + 1;
-                    txt_wordBuilder.AppendText(List_1.Items(Number));
+                    txt_wordBuilder.AppendText(List_1.Items[Number].ToString());
                 }
             }
             else
@@ -109,27 +110,14 @@ namespace MiniKeyboard
              {
                  Number = 0;
              }
-             if (txt_wordBuilder.AppendText(List_1.Items(Number)))
+             if (txt_wordBuilder.AppendText(List_1.Items[Number]))
              {
                  withinTimer.Enabled = true;
              }
 
         }
 
-        private bool BoolIsButtonPressed(int p)
-        {
-            throw new NotImplementedException();
-        }
-
-        private bool BoolsButtonPressed(int p)
-        {
-            throw new NotImplementedException();
-        }
-
-        private bool BoolsButtonPresssed(int p)
-        {
-            throw new NotImplementedException();
-        }
+   
 
         private void btn_7_Click(object sender, EventArgs e)
         {
@@ -208,6 +196,11 @@ namespace MiniKeyboard
                 outputStream.Write(txt_Main.Text);
                 outputStream.Close();
             }
+
+        }
+
+        private void List_1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
