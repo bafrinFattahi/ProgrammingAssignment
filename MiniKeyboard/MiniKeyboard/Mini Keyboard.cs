@@ -24,7 +24,7 @@ namespace MiniKeyboard
 
         // Timing Functionality 
         bool boolFirstVisit = true;
-        int intIntervalRequired = 500;
+        int intIntervalRequired = 800;
 
 
         // Global ListBox can be place on the Form instead of here.
@@ -44,7 +44,7 @@ namespace MiniKeyboard
         private string currentFile = "";
         private void Form1_Load(object sender, EventArgs e)
         {
-            withinTimer.Interval = intIntervalRequired;
+            Timer_Double.Interval = intIntervalRequired;
            
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
                 BoolIsButtonPressed[intWhichButton] = false;
@@ -79,12 +79,12 @@ namespace MiniKeyboard
 
         private void btn_1_Click(object sender, EventArgs e)
         {
-          //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+            lstGlobalListbox.Items.Clear();             
+            //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
             if (boolFirstVisit == true)
             {
                 BoolIsButtonPressed[1] = true;
 
-                lstGlobalListbox.Items.Clear();
                 Str_KeyStrokes = "1";
                 //Append Keystrokes to display the variable Str_KeyStrokes
                 txt_KeySequence.AppendText(Str_KeyStrokes);
@@ -94,25 +94,16 @@ namespace MiniKeyboard
                     lstGlobalListbox.Items.Add(List_1.Items[Index].ToString());
                     //If not first click then enable timer and proceed.
                     boolFirstVisit = false;
-                    withinTimer.Enabled = true;
+                    Timer_Double.Enabled = true;
                     Number = Number + 1;
-                    txt_wordBuilder.AppendText(List_1.Items[Number].ToString());
                 }
             }
             else
             {
                 //If not first click and is the same click again then.
-                withinTimer.Enabled = false;
                 Number = Number + 1;
-                txt_wordBuilder.Text = txt_wordBuilder.Text.Remove(txt_wordBuilder.TextLength - 1, 1);
-            }
-             if (Number == List_1.Items.Count)
-             {
-                 Number = 0;
-             }
-             if (txt_wordBuilder.AppendText(List_1.Items[Number]))
-             {
-                 withinTimer.Enabled = true;
+                Timer_Double.Enabled =true;       
+           
              }
 
         }
@@ -201,6 +192,15 @@ namespace MiniKeyboard
 
         private void List_1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void Selection_complete(object sender, EventArgs e)
+        {
+            txt_wordBuilder.AppendText(List_1.Items[Number].ToString());
+            Timer_Double.Enabled = false;
+            Number = -1;
+           
 
         }
 
