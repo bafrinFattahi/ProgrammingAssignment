@@ -204,6 +204,15 @@ namespace MiniKeyboard
 
         }
 
+        private void btn_zero_Click(object sender, EventArgs e)
+        {
+            // It append the text content of the WordBuilder textbox, into the Note Pad textbox followed by a space.
+            txt_Main.AppendText(txt_wordBuilder.Text + " ");
+            Str_KeyStrokes = "";
+            txt_KeySequence.Clear();
+            txt_wordBuilder.Clear();
+        }
+
 
         }
 }
