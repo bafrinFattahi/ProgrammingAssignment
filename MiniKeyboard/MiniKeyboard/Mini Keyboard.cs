@@ -21,19 +21,14 @@ namespace MiniKeyboard
         bool booleanRequiresSaving = false;
         // The Path to the 'Dictionary' 
         string strPresentFilePathName = "";
-
         // Timing Functionality 
         bool boolFirstVisit = true;
         int intIntervalRequired = 800;
-
-
         // Global ListBox can be place on the Form instead of here.
         ListBox lstGlobalListbox = new ListBox();
         int intMyListIndex = 0;
-
         // Buttons. Identifies which button is being selected be the user. 
         bool[] BoolIsButtonPressed = new bool[19];
-
         // Prediction. 
         string Str_KeyStrokes;
         // Is the line from the list that has the highest useage 
@@ -44,12 +39,10 @@ namespace MiniKeyboard
         private string currentFile = "";
         private void Form1_Load(object sender, EventArgs e)
         {
-            Timer_Double.Interval = intIntervalRequired;
-           
+            Timer_Double.Interval = intIntervalRequired;     
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
                 BoolIsButtonPressed[intWhichButton] = false;
-
-            // Load the Dictionary  loadDictionary();  
+              // Load the Dictionary  loadDictionary();  
         }
 
         private void fileToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -84,13 +77,11 @@ namespace MiniKeyboard
             if (boolFirstVisit == true)
             {
                 BoolIsButtonPressed[1] = true;
-
                 Str_KeyStrokes = "1";
                 //Append Keystrokes to display the variable Str_KeyStrokes
                 txt_KeySequence.AppendText(Str_KeyStrokes);
                 for (int Index = 0; Index <= List_1.Items.Count - 1; Index++)
-                {
-                    
+                {       
                     lstGlobalListbox.Items.Add(List_1.Items[Index].ToString());
                     //If not first click then enable timer and proceed.
                     boolFirstVisit = false;
@@ -142,7 +133,8 @@ namespace MiniKeyboard
 
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            // End the program
+            System.Environment.Exit(0);  
         }
 
         private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -164,8 +156,6 @@ namespace MiniKeyboard
         private void saveASToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //Code for having the 'SaveAs' dialog box open, i have also set to c:\ drive
-
-
 	        StreamWriter outputStream = default(StreamWriter);
 	        SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
 	        SaveFileDialog1.InitialDirectory = "c:\\";
@@ -200,8 +190,6 @@ namespace MiniKeyboard
             txt_wordBuilder.AppendText(List_1.Items[Number].ToString());
             Timer_Double.Enabled = false;
             Number = -1;
-           
-
         }
 
         private void btn_zero_Click(object sender, EventArgs e)
@@ -211,6 +199,12 @@ namespace MiniKeyboard
             Str_KeyStrokes = "";
             txt_KeySequence.Clear();
             txt_wordBuilder.Clear();
+        }
+
+        private void btn_Enter_Click(object sender, EventArgs e)
+        {
+            //Start new line in the main Text box
+            txt_Main.AppendText(Environment.NewLine);
         }
 
 
