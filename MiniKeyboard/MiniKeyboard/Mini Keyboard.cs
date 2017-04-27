@@ -106,7 +106,34 @@ namespace MiniKeyboard
 
         private void btn_7_Click(object sender, EventArgs e)
         {
-
+            Timer_Double.Enabled = false;
+            //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+            if (boolFirstVisit == true)
+            {
+                lstGlobalListbox.Items.Clear();
+                BoolIsButtonPressed[7] = true;
+                Str_KeyStrokes = "7";
+                //Append Keystrokes to display the variable Str_KeyStrokes
+                txt_KeySequence.AppendText(Str_KeyStrokes);
+                for (int Index = 0; Index <= List_7.Items.Count - 1; Index++)
+                {
+                    lstGlobalListbox.Items.Add(List_7.Items[Index].ToString());
+                }
+                //If not first click then enable timer and proceed.
+                boolFirstVisit = false;
+                Timer_Double.Enabled = true;
+                Number = Number + 1;
+            }
+            else
+            {
+                //If not first click and is the same click again then.
+                Number = Number + 1;
+                Timer_Double.Enabled = true;
+                if (Number == List_7.Items.Count)
+                {
+                    Number = 0;
+                }
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,7 +170,7 @@ namespace MiniKeyboard
 
         private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-          //Code for having the 'Open' dialog box open, i have set to c:\ drive
+            //Code for having the 'Open' dialog box open, i have set to same folder as project
 	      StreamReader inputStream = default(StreamReader);
 	      OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
           OpenFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
@@ -159,7 +186,7 @@ namespace MiniKeyboard
 
         private void saveASToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //Code for having the 'SaveAs' dialog box open, i have also set to c:\ drive
+            //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
 	        StreamWriter outputStream = default(StreamWriter);
 	        SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
 	        SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
@@ -316,8 +343,24 @@ namespace MiniKeyboard
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //clear the main text box, create a new page.
-            txt_Main.Text = "";
+           //code to save the current file and create the new notepad page
+            if (txt_Main.Text != "")
+            {
+                //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
+                StreamWriter outputStream = default(StreamWriter);
+                SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
+                SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+                if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    currentFile = SaveFileDialog1.FileName;
+                    outputStream = File.CreateText(currentFile);
+                    outputStream.Write(txt_Main.Text);
+                    outputStream.Close();
+                }
+
+                //clear the main text box, create a new page.
+                txt_Main.Text = "";
+            }
         }
 
         private void btn_5_Click(object sender, EventArgs e)
@@ -351,6 +394,38 @@ namespace MiniKeyboard
                 }
             }
 
+        }
+
+        private void btn_6_Click(object sender, EventArgs e)
+        {
+            Timer_Double.Enabled = false;
+            //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+            if (boolFirstVisit == true)
+            {
+                lstGlobalListbox.Items.Clear();
+                BoolIsButtonPressed[6] = true;
+                Str_KeyStrokes = "6";
+                //Append Keystrokes to display the variable Str_KeyStrokes
+                txt_KeySequence.AppendText(Str_KeyStrokes);
+                for (int Index = 0; Index <= List_6.Items.Count - 1; Index++)
+                {
+                    lstGlobalListbox.Items.Add(List_6.Items[Index].ToString());
+                }
+                //If not first click then enable timer and proceed.
+                boolFirstVisit = false;
+                Timer_Double.Enabled = true;
+                Number = Number + 1;
+            }
+            else
+            {
+                //If not first click and is the same click again then.
+                Number = Number + 1;
+                Timer_Double.Enabled = true;
+                if (Number == List_6.Items.Count)
+                {
+                    Number = 0;
+                }
+            }
         }
         }
 }
