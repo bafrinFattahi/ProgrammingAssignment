@@ -13,10 +13,11 @@ namespace MiniKeyboard
 {
 
     public partial class Frm_ : Form
-    {
+    { 
         public Frm_()
         {
             InitializeComponent();
+             System.Console.WriteLine("\u00a9");
         }
         // Flags changes made and thus file needs saving
         bool booleanRequiresSaving = false;
@@ -37,6 +38,7 @@ namespace MiniKeyboard
         int pedictedWorddLength;
         int Number = -1;
         private string currentFile = "";
+       
         private void Form1_Load(object sender, EventArgs e)
         {
             Timer_Double.Interval = intIntervalRequired;
@@ -165,55 +167,27 @@ namespace MiniKeyboard
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Allow user to set the interval
-            intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' which is for every 1000 is equal to 1 second"));
+            intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' which is for every 1000 is equal to 1 second. At present the Delay value is 500."));
         }
 
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            // End the program
-            System.Environment.Exit(0);
+            
         }
 
         private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //Code for having the 'Open' dialog box open, i have set to same folder as project
-            StreamReader inputStream = default(StreamReader);
-            OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
-            OpenFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
-            if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                currentFile = OpenFileDialog1.FileName;
-                inputStream = File.OpenText(currentFile);
-                txt_Main.Text = inputStream.ReadToEnd();
-                inputStream.Close();
-
-            }
+           
         }
 
         private void saveASToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
-            StreamWriter outputStream = default(StreamWriter);
-            SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
-            SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
-            if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                currentFile = SaveFileDialog1.FileName;
-                outputStream = File.CreateText(currentFile);
-                outputStream.Write(txt_Main.Text);
-                outputStream.Close();
-            }
+           
         }
 
         private void saveToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //Code for the 'Save' option, I have set it to save the text in the main window
-            if (!string.IsNullOrEmpty(currentFile))
-            {
-                StreamWriter outputStream = File.CreateText(currentFile);
-                outputStream.Write(txt_Main.Text);
-                outputStream.Close();
-            }
+           
 
         }
 
@@ -387,24 +361,7 @@ namespace MiniKeyboard
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //code to save the current file and create the new notepad page
-            if (txt_Main.Text != "")
-            {
-                //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
-                StreamWriter outputStream = default(StreamWriter);
-                SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
-                SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
-                if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    currentFile = SaveFileDialog1.FileName;
-                    outputStream = File.CreateText(currentFile);
-                    outputStream.Write(txt_Main.Text);
-                    outputStream.Close();
-                }
-
-                //clear the main text box, create a new page.
-                txt_Main.Text = "";
-            }
+         
         }
 
         private void btn_5_Click(object sender, EventArgs e)
@@ -580,6 +537,96 @@ namespace MiniKeyboard
                     }
                 }
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+  
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //code to save the current file and create the new notepad page
+            if (txt_Main.Text != "")
+            {
+                //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
+                StreamWriter outputStream = default(StreamWriter);
+                SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
+                SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+                if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    currentFile = SaveFileDialog1.FileName;
+                    outputStream = File.CreateText(currentFile);
+                    outputStream.Write(txt_Main.Text);
+                    outputStream.Close();
+                }
+
+                //clear the main text box, create a new page.
+                txt_Main.Text = "";
+            }
+        }
+
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //Code for having the 'Open' dialog box open, i have set to same folder as project
+            StreamReader inputStream = default(StreamReader);
+            OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
+            OpenFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+            if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                currentFile = OpenFileDialog1.FileName;
+                inputStream = File.OpenText(currentFile);
+                txt_Main.Text = inputStream.ReadToEnd();
+                inputStream.Close();
+
+            }
+        }
+
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //Code for the 'Save' option, I have set it to save the text in the main window
+            if (!string.IsNullOrEmpty(currentFile))
+            {
+                StreamWriter outputStream = File.CreateText(currentFile);
+                outputStream.Write(txt_Main.Text);
+                outputStream.Close();
+            }
+        }
+
+        private void saveAsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
+            StreamWriter outputStream = default(StreamWriter);
+            SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
+            SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+            if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                currentFile = SaveFileDialog1.FileName;
+                outputStream = File.CreateText(currentFile);
+                outputStream.Write(txt_Main.Text);
+                outputStream.Close();
+            }
+        }
+
+        private void exitToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            // End the program
+            System.Environment.Exit(0);
+        }
+
+        private void txt_Main_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
