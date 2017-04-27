@@ -189,8 +189,9 @@ namespace MiniKeyboard
 
         private void Selection_complete(object sender, EventArgs e)
         {
-            txt_wordBuilder.AppendText(List_1.Items[Number].ToString());
+            txt_wordBuilder.AppendText(lstGlobalListbox.Items[Number].ToString());
             Timer_Double.Enabled = false;
+            boolFirstVisit = true;
             Number = -1;
         }
 
@@ -207,6 +208,44 @@ namespace MiniKeyboard
         {
             //Start new line in the main Text box
             txt_Main.AppendText(Environment.NewLine);
+        }
+
+        private void btn_11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_2_Click(object sender, EventArgs e)
+        {
+            Timer_Double.Enabled = false;
+            //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+            if (boolFirstVisit == true)
+            {
+                lstGlobalListbox.Items.Clear();
+                BoolIsButtonPressed[2] = true;
+                Str_KeyStrokes = "2";
+                //Append Keystrokes to display the variable Str_KeyStrokes
+                txt_KeySequence.AppendText(Str_KeyStrokes);
+                for (int Index = 0; Index <= List_2.Items.Count - 1; Index++)
+                {
+                    lstGlobalListbox.Items.Add(List_2.Items[Index].ToString());
+                }
+                //If not first click then enable timer and proceed.
+                boolFirstVisit = false;
+                Timer_Double.Enabled = true;
+                Number = Number + 1;
+            }
+            else
+            {
+                //If not first click and is the same click again then.
+                Number = Number + 1;
+                Timer_Double.Enabled = true;
+                if (Number == List_2.Items.Count)
+                {
+                    Number = 0;
+                }
+            }
+
         }
 
 

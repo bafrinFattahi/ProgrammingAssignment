@@ -64,16 +64,16 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.list_7 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.List_8 = new System.Windows.Forms.ListBox();
+            this.List_9 = new System.Windows.Forms.ListBox();
+            this.List_4 = new System.Windows.Forms.ListBox();
+            this.List_5 = new System.Windows.Forms.ListBox();
+            this.List_6 = new System.Windows.Forms.ListBox();
             this.List_1 = new System.Windows.Forms.ListBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
-            this.listBox8 = new System.Windows.Forms.ListBox();
-            this.listBox9 = new System.Windows.Forms.ListBox();
-            this.listBox10 = new System.Windows.Forms.ListBox();
+            this.List_2 = new System.Windows.Forms.ListBox();
+            this.List_3 = new System.Windows.Forms.ListBox();
+            this.List_star = new System.Windows.Forms.ListBox();
+            this.List_underline = new System.Windows.Forms.ListBox();
             this.Timer_Double = new System.Windows.Forms.Timer(this.components);
             this.txt_KeySequence = new System.Windows.Forms.TextBox();
             this.pnl_Sequence = new System.Windows.Forms.Panel();
@@ -276,6 +276,7 @@
             this.btn_2.TabIndex = 15;
             this.btn_2.Text = "2\r\n T U V  ";
             this.btn_2.UseVisualStyleBackColor = false;
+            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
             // 
             // btn_3
             // 
@@ -325,6 +326,7 @@
             this.btn_11.TabIndex = 19;
             this.btn_11.Text = " #\r\n000";
             this.btn_11.UseVisualStyleBackColor = false;
+            this.btn_11.Click += new System.EventHandler(this.btn_11_Click);
             // 
             // panel1
             // 
@@ -483,11 +485,11 @@
             this.list_7.TabIndex = 24;
             this.list_7.Visible = false;
             // 
-            // listBox1
+            // List_8
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
+            this.List_8.FormattingEnabled = true;
+            this.List_8.ItemHeight = 16;
+            this.List_8.Items.AddRange(new object[] {
             "a",
             "b",
             "c",
@@ -495,19 +497,19 @@
             "A",
             "B",
             "C"});
-            this.listBox1.Location = new System.Drawing.Point(889, 348);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(56, 84);
-            this.listBox1.TabIndex = 25;
-            this.listBox1.Visible = false;
+            this.List_8.Location = new System.Drawing.Point(889, 348);
+            this.List_8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_8.Name = "List_8";
+            this.List_8.ScrollAlwaysVisible = true;
+            this.List_8.Size = new System.Drawing.Size(56, 84);
+            this.List_8.TabIndex = 25;
+            this.List_8.Visible = false;
             // 
-            // listBox2
+            // List_9
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Items.AddRange(new object[] {
+            this.List_9.FormattingEnabled = true;
+            this.List_9.ItemHeight = 16;
+            this.List_9.Items.AddRange(new object[] {
             "d",
             "e",
             "f",
@@ -515,19 +517,19 @@
             "D",
             "E",
             "F"});
-            this.listBox2.Location = new System.Drawing.Point(973, 348);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(56, 84);
-            this.listBox2.TabIndex = 26;
-            this.listBox2.Visible = false;
+            this.List_9.Location = new System.Drawing.Point(973, 348);
+            this.List_9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_9.Name = "List_9";
+            this.List_9.ScrollAlwaysVisible = true;
+            this.List_9.Size = new System.Drawing.Size(56, 84);
+            this.List_9.TabIndex = 26;
+            this.List_9.Visible = false;
             // 
-            // listBox3
+            // List_4
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Items.AddRange(new object[] {
+            this.List_4.FormattingEnabled = true;
+            this.List_4.ItemHeight = 16;
+            this.List_4.Items.AddRange(new object[] {
             "g",
             "h",
             "i",
@@ -535,19 +537,19 @@
             "G",
             "H",
             "I"});
-            this.listBox3.Location = new System.Drawing.Point(797, 454);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.ScrollAlwaysVisible = true;
-            this.listBox3.Size = new System.Drawing.Size(56, 84);
-            this.listBox3.TabIndex = 27;
-            this.listBox3.Visible = false;
+            this.List_4.Location = new System.Drawing.Point(797, 454);
+            this.List_4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_4.Name = "List_4";
+            this.List_4.ScrollAlwaysVisible = true;
+            this.List_4.Size = new System.Drawing.Size(56, 84);
+            this.List_4.TabIndex = 27;
+            this.List_4.Visible = false;
             // 
-            // listBox4
+            // List_5
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 16;
-            this.listBox4.Items.AddRange(new object[] {
+            this.List_5.FormattingEnabled = true;
+            this.List_5.ItemHeight = 16;
+            this.List_5.Items.AddRange(new object[] {
             "j",
             "k",
             "l",
@@ -555,19 +557,19 @@
             "J",
             "K",
             "I"});
-            this.listBox4.Location = new System.Drawing.Point(889, 454);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.ScrollAlwaysVisible = true;
-            this.listBox4.Size = new System.Drawing.Size(56, 84);
-            this.listBox4.TabIndex = 28;
-            this.listBox4.Visible = false;
+            this.List_5.Location = new System.Drawing.Point(889, 454);
+            this.List_5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_5.Name = "List_5";
+            this.List_5.ScrollAlwaysVisible = true;
+            this.List_5.Size = new System.Drawing.Size(56, 84);
+            this.List_5.TabIndex = 28;
+            this.List_5.Visible = false;
             // 
-            // listBox5
+            // List_6
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 16;
-            this.listBox5.Items.AddRange(new object[] {
+            this.List_6.FormattingEnabled = true;
+            this.List_6.ItemHeight = 16;
+            this.List_6.Items.AddRange(new object[] {
             "m",
             "n",
             "o",
@@ -575,13 +577,13 @@
             "M",
             "N",
             "O"});
-            this.listBox5.Location = new System.Drawing.Point(973, 454);
-            this.listBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.ScrollAlwaysVisible = true;
-            this.listBox5.Size = new System.Drawing.Size(56, 84);
-            this.listBox5.TabIndex = 29;
-            this.listBox5.Visible = false;
+            this.List_6.Location = new System.Drawing.Point(973, 454);
+            this.List_6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_6.Name = "List_6";
+            this.List_6.ScrollAlwaysVisible = true;
+            this.List_6.Size = new System.Drawing.Size(56, 84);
+            this.List_6.TabIndex = 29;
+            this.List_6.Visible = false;
             // 
             // List_1
             // 
@@ -606,11 +608,11 @@
             this.List_1.Visible = false;
             this.List_1.SelectedIndexChanged += new System.EventHandler(this.List_1_SelectedIndexChanged);
             // 
-            // listBox7
+            // List_2
             // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.ItemHeight = 16;
-            this.listBox7.Items.AddRange(new object[] {
+            this.List_2.FormattingEnabled = true;
+            this.List_2.ItemHeight = 16;
+            this.List_2.Items.AddRange(new object[] {
             "t",
             "u",
             "v",
@@ -618,19 +620,19 @@
             "T",
             "U",
             "V"});
-            this.listBox7.Location = new System.Drawing.Point(889, 559);
-            this.listBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.ScrollAlwaysVisible = true;
-            this.listBox7.Size = new System.Drawing.Size(56, 84);
-            this.listBox7.TabIndex = 31;
-            this.listBox7.Visible = false;
+            this.List_2.Location = new System.Drawing.Point(889, 559);
+            this.List_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_2.Name = "List_2";
+            this.List_2.ScrollAlwaysVisible = true;
+            this.List_2.Size = new System.Drawing.Size(56, 84);
+            this.List_2.TabIndex = 31;
+            this.List_2.Visible = false;
             // 
-            // listBox8
+            // List_3
             // 
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.ItemHeight = 16;
-            this.listBox8.Items.AddRange(new object[] {
+            this.List_3.FormattingEnabled = true;
+            this.List_3.ItemHeight = 16;
+            this.List_3.Items.AddRange(new object[] {
             "w",
             "x",
             "y",
@@ -640,45 +642,45 @@
             "X",
             "Y",
             "Z"});
-            this.listBox8.Location = new System.Drawing.Point(973, 559);
-            this.listBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.ScrollAlwaysVisible = true;
-            this.listBox8.Size = new System.Drawing.Size(56, 84);
-            this.listBox8.TabIndex = 32;
-            this.listBox8.Visible = false;
+            this.List_3.Location = new System.Drawing.Point(973, 559);
+            this.List_3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_3.Name = "List_3";
+            this.List_3.ScrollAlwaysVisible = true;
+            this.List_3.Size = new System.Drawing.Size(56, 84);
+            this.List_3.TabIndex = 32;
+            this.List_3.Visible = false;
             // 
-            // listBox9
+            // List_star
             // 
-            this.listBox9.FormattingEnabled = true;
-            this.listBox9.ItemHeight = 16;
-            this.listBox9.Items.AddRange(new object[] {
+            this.List_star.FormattingEnabled = true;
+            this.List_star.ItemHeight = 16;
+            this.List_star.Items.AddRange(new object[] {
             "*",
             "-",
             "_"});
-            this.listBox9.Location = new System.Drawing.Point(797, 665);
-            this.listBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox9.Name = "listBox9";
-            this.listBox9.ScrollAlwaysVisible = true;
-            this.listBox9.Size = new System.Drawing.Size(56, 52);
-            this.listBox9.TabIndex = 33;
-            this.listBox9.Visible = false;
+            this.List_star.Location = new System.Drawing.Point(797, 665);
+            this.List_star.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_star.Name = "List_star";
+            this.List_star.ScrollAlwaysVisible = true;
+            this.List_star.Size = new System.Drawing.Size(56, 52);
+            this.List_star.TabIndex = 33;
+            this.List_star.Visible = false;
             // 
-            // listBox10
+            // List_underline
             // 
-            this.listBox10.FormattingEnabled = true;
-            this.listBox10.ItemHeight = 16;
-            this.listBox10.Items.AddRange(new object[] {
+            this.List_underline.FormattingEnabled = true;
+            this.List_underline.ItemHeight = 16;
+            this.List_underline.Items.AddRange(new object[] {
             "#",
             "-",
             "_"});
-            this.listBox10.Location = new System.Drawing.Point(973, 665);
-            this.listBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox10.Name = "listBox10";
-            this.listBox10.ScrollAlwaysVisible = true;
-            this.listBox10.Size = new System.Drawing.Size(56, 52);
-            this.listBox10.TabIndex = 34;
-            this.listBox10.Visible = false;
+            this.List_underline.Location = new System.Drawing.Point(973, 665);
+            this.List_underline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_underline.Name = "List_underline";
+            this.List_underline.ScrollAlwaysVisible = true;
+            this.List_underline.Size = new System.Drawing.Size(56, 52);
+            this.List_underline.TabIndex = 34;
+            this.List_underline.Visible = false;
             // 
             // Timer_Double
             // 
@@ -718,16 +720,16 @@
             this.ClientSize = new System.Drawing.Size(1104, 783);
             this.Controls.Add(this.lstGlobalListbox);
             this.Controls.Add(this.pnl_Sequence);
-            this.Controls.Add(this.listBox10);
-            this.Controls.Add(this.listBox9);
-            this.Controls.Add(this.listBox8);
-            this.Controls.Add(this.listBox7);
+            this.Controls.Add(this.List_underline);
+            this.Controls.Add(this.List_star);
+            this.Controls.Add(this.List_3);
+            this.Controls.Add(this.List_2);
             this.Controls.Add(this.List_1);
-            this.Controls.Add(this.listBox5);
-            this.Controls.Add(this.listBox4);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.List_6);
+            this.Controls.Add(this.List_5);
+            this.Controls.Add(this.List_4);
+            this.Controls.Add(this.List_9);
+            this.Controls.Add(this.List_8);
             this.Controls.Add(this.list_7);
             this.Controls.Add(this.txt_Main);
             this.Controls.Add(this.panel2);
@@ -783,16 +785,16 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.ListBox list_7;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox List_8;
+        private System.Windows.Forms.ListBox List_9;
+        private System.Windows.Forms.ListBox List_4;
+        private System.Windows.Forms.ListBox List_5;
+        private System.Windows.Forms.ListBox List_6;
         private System.Windows.Forms.ListBox List_1;
-        private System.Windows.Forms.ListBox listBox7;
-        private System.Windows.Forms.ListBox listBox8;
-        private System.Windows.Forms.ListBox listBox9;
-        private System.Windows.Forms.ListBox listBox10;
+        private System.Windows.Forms.ListBox List_2;
+        private System.Windows.Forms.ListBox List_3;
+        private System.Windows.Forms.ListBox List_star;
+        private System.Windows.Forms.ListBox List_underline;
         private System.Windows.Forms.Timer Timer_Double;
         private System.Windows.Forms.TextBox txt_KeySequence;
         private System.Windows.Forms.Panel pnl_Sequence;
