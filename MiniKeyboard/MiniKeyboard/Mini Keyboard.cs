@@ -248,6 +248,36 @@ namespace MiniKeyboard
 
         }
 
-
+        private void btn_3_Click(object sender, EventArgs e)
+        {
+            Timer_Double.Enabled = false;
+            //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+            if (boolFirstVisit == true)
+            {
+                lstGlobalListbox.Items.Clear();
+                BoolIsButtonPressed[3] = true;
+                Str_KeyStrokes = "3";
+                //Append Keystrokes to display the variable Str_KeyStrokes
+                txt_KeySequence.AppendText(Str_KeyStrokes);
+                for (int Index = 0; Index <= List_3.Items.Count - 1; Index++)
+                {
+                    lstGlobalListbox.Items.Add(List_3.Items[Index].ToString());
+                }
+                //If not first click then enable timer and proceed.
+                boolFirstVisit = false;
+                Timer_Double.Enabled = true;
+                Number = Number + 1;
+            }
+            else
+            {
+                //If not first click and is the same click again then.
+                Number = Number + 1;
+                Timer_Double.Enabled = true;
+                if (Number == List_3.Items.Count)
+                {
+                    Number = 0;
+                }
+            }
+        }
         }
 }

@@ -289,6 +289,7 @@
             this.btn_3.TabIndex = 16;
             this.btn_3.Text = "3\r\n W X Y Z ";
             this.btn_3.UseVisualStyleBackColor = false;
+            this.btn_3.Click += new System.EventHandler(this.btn_3_Click);
             // 
             // btn_10
             // 
@@ -711,6 +712,7 @@
             this.lstGlobalListbox.Name = "lstGlobalListbox";
             this.lstGlobalListbox.Size = new System.Drawing.Size(164, 308);
             this.lstGlobalListbox.TabIndex = 37;
+            this.lstGlobalListbox.Visible = false;
             this.lstGlobalListbox.SelectedIndexChanged += new System.EventHandler(this.Selection_complete);
             // 
             // Frm_
