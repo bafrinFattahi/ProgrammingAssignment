@@ -23,9 +23,8 @@ namespace MiniKeyboard
         string strPresentFilePathName = "";
         // Timing Functionality 
         bool boolFirstVisit = true;
-        int intIntervalRequired = 800;
-        // Global ListBox can be place on the Form instead of here.
-        ListBox lstGlobalListbox = new ListBox();
+        int intIntervalRequired = 500;
+        // Global ListBox placed on the Form.
         int intMyListIndex = 0;
         // Buttons. Identifies which button is being selected be the user. 
         bool[] BoolIsButtonPressed = new bool[19];
@@ -72,10 +71,11 @@ namespace MiniKeyboard
 
         private void btn_1_Click(object sender, EventArgs e)
         {
-            lstGlobalListbox.Items.Clear();             
+            Timer_Double.Enabled = false;             
             //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
             if (boolFirstVisit == true)
             {
+                lstGlobalListbox.Items.Clear();
                 BoolIsButtonPressed[1] = true;
                 Str_KeyStrokes = "1";
                 //Append Keystrokes to display the variable Str_KeyStrokes
@@ -83,20 +83,22 @@ namespace MiniKeyboard
                 for (int Index = 0; Index <= List_1.Items.Count - 1; Index++)
                 {       
                     lstGlobalListbox.Items.Add(List_1.Items[Index].ToString());
+                }
                     //If not first click then enable timer and proceed.
                     boolFirstVisit = false;
                     Timer_Double.Enabled = true;
                     Number = Number + 1;
-                }
             }
             else
             {
                 //If not first click and is the same click again then.
                 Number = Number + 1;
-                Timer_Double.Enabled =true;       
-           
+                Timer_Double.Enabled =true;
+                if (Number == List_1.Items.Count)
+                {
+                    Number = 0;
+                }           
              }
-
         }
 
    
