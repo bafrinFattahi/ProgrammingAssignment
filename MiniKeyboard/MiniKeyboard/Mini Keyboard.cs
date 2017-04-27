@@ -247,7 +247,37 @@ namespace MiniKeyboard
 
         private void btn_11_Click(object sender, EventArgs e)
         {
-
+            if (txt_ModeStatus.Text == "Multi-Press")
+            {
+                Timer_Double.Enabled = false;
+                //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+                if (boolFirstVisit == true)
+                {
+                    lstGlobalListbox.Items.Clear();
+                    BoolIsButtonPressed[11] = true;
+                    Str_KeyStrokes = "11";
+                    //Append Keystrokes to display the variable Str_KeyStrokes
+                    txt_KeySequence.AppendText(Str_KeyStrokes);
+                    for (int Index = 0; Index <= List_underline.Items.Count - 1; Index++)
+                    {
+                        lstGlobalListbox.Items.Add(List_underline.Items[Index].ToString());
+                    }
+                    //If not first click then enable timer and proceed.
+                    boolFirstVisit = false;
+                    Timer_Double.Enabled = true;
+                    Number = Number + 1;
+                }
+                else
+                {
+                    //If not first click and is the same click again then.
+                    Number = Number + 1;
+                    Timer_Double.Enabled = true;
+                    if (Number == List_underline.Items.Count)
+                    {
+                        Number = 0;
+                    }
+                }
+            }
         }
 
         private void btn_2_Click(object sender, EventArgs e)
@@ -510,6 +540,41 @@ namespace MiniKeyboard
                     Number = Number + 1;
                     Timer_Double.Enabled = true;
                     if (Number == List_9.Items.Count)
+                    {
+                        Number = 0;
+                    }
+                }
+            }
+        }
+
+        private void btn_10_Click(object sender, EventArgs e)
+        {
+            if (txt_ModeStatus.Text == "Multi-Press")
+            {
+                Timer_Double.Enabled = false;
+                //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+                if (boolFirstVisit == true)
+                {
+                    lstGlobalListbox.Items.Clear();
+                    BoolIsButtonPressed[10] = true;
+                    Str_KeyStrokes = "10";
+                    //Append Keystrokes to display the variable Str_KeyStrokes
+                    txt_KeySequence.AppendText(Str_KeyStrokes);
+                    for (int Index = 0; Index <= List_star.Items.Count - 1; Index++)
+                    {
+                        lstGlobalListbox.Items.Add(List_star.Items[Index].ToString());
+                    }
+                    //If not first click then enable timer and proceed.
+                    boolFirstVisit = false;
+                    Timer_Double.Enabled = true;
+                    Number = Number + 1;
+                }
+                else
+                {
+                    //If not first click and is the same click again then.
+                    Number = Number + 1;
+                    Timer_Double.Enabled = true;
+                    if (Number == List_star.Items.Count)
                     {
                         Number = 0;
                     }
