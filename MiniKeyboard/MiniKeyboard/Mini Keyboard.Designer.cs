@@ -203,6 +203,7 @@
             this.btn_8.TabIndex = 9;
             this.btn_8.Text = "8\r\n A B C ";
             this.btn_8.UseVisualStyleBackColor = false;
+            this.btn_8.Click += new System.EventHandler(this.btn_8_Click);
             // 
             // btn_9
             // 
@@ -215,6 +216,7 @@
             this.btn_9.TabIndex = 10;
             this.btn_9.Text = "9 \r\nD E F";
             this.btn_9.UseVisualStyleBackColor = false;
+            this.btn_9.Click += new System.EventHandler(this.btn_9_Click);
             // 
             // btn_4
             // 
