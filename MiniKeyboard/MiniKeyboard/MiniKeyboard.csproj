@@ -50,6 +50,7 @@
     <Compile Include="Mini Keyboard.Designer.cs">
       <DependentUpon>Mini Keyboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyDialogs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Mini Keyboard.resx">

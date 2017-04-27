@@ -227,6 +227,7 @@
             this.btn_4.TabIndex = 11;
             this.btn_4.Text = "4 \r\nG H I ";
             this.btn_4.UseVisualStyleBackColor = false;
+            this.btn_4.Click += new System.EventHandler(this.btn_4_Click);
             // 
             // btn_5
             // 

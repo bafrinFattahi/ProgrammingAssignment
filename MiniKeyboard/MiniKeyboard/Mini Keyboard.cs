@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MyDialogs;
 namespace MiniKeyboard
 {
    
@@ -130,7 +131,8 @@ namespace MiniKeyboard
 
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //Allow user to set the interval
+            intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' which is for every 1000 is equal to 1 second"));
         }
 
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -274,6 +276,38 @@ namespace MiniKeyboard
                 Number = Number + 1;
                 Timer_Double.Enabled = true;
                 if (Number == List_3.Items.Count)
+                {
+                    Number = 0;
+                }
+            }
+        }
+
+        private void btn_4_Click(object sender, EventArgs e)
+        {
+            Timer_Double.Enabled = false;
+            //If first click then set boolean for the button number to true, clear the gloabl list box and apprend variable to 1 (Str_KeySrokes).
+            if (boolFirstVisit == true)
+            {
+                lstGlobalListbox.Items.Clear();
+                BoolIsButtonPressed[4] = true;
+                Str_KeyStrokes = "4";
+                //Append Keystrokes to display the variable Str_KeyStrokes
+                txt_KeySequence.AppendText(Str_KeyStrokes);
+                for (int Index = 0; Index <= List_4.Items.Count - 1; Index++)
+                {
+                    lstGlobalListbox.Items.Add(List_4.Items[Index].ToString());
+                }
+                //If not first click then enable timer and proceed.
+                boolFirstVisit = false;
+                Timer_Double.Enabled = true;
+                Number = Number + 1;
+            }
+            else
+            {
+                //If not first click and is the same click again then.
+                Number = Number + 1;
+                Timer_Double.Enabled = true;
+                if (Number == List_4.Items.Count)
                 {
                     Number = 0;
                 }
