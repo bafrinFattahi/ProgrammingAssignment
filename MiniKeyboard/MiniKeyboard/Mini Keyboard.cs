@@ -559,10 +559,12 @@ namespace MiniKeyboard
             //code to save the current file and create the new notepad page
             if (txt_Main.Text != "")
             {
+                //first get the current path 
+                string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                 //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
                 StreamWriter outputStream = default(StreamWriter);
                 SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
-                SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+                SaveFileDialog1.InitialDirectory = appPath;
                 if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     currentFile = SaveFileDialog1.FileName;
@@ -578,10 +580,12 @@ namespace MiniKeyboard
 
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            //code to get the current file path
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             //Code for having the 'Open' dialog box open, i have set to same folder as project
             StreamReader inputStream = default(StreamReader);
             OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
-            OpenFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+            OpenFileDialog1.InitialDirectory = appPath;
             if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 currentFile = OpenFileDialog1.FileName;
@@ -605,10 +609,12 @@ namespace MiniKeyboard
 
         private void saveAsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            // code to get the current path for save the file
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             //Code for having the 'SaveAs' dialog box open, i have also set to same folder as project
             StreamWriter outputStream = default(StreamWriter);
             SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
-            SaveFileDialog1.InitialDirectory = "G:\\Sheffiled Hallam 2017 Semester 2\\Programming\\Assignment2-MiniKeyboard\\ProgrammingAssignment\\MiniKeyboard\\";
+            SaveFileDialog1.InitialDirectory = appPath;
             if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 currentFile = SaveFileDialog1.FileName;
